@@ -41,6 +41,6 @@
   flex: 1;
 }
 
-.chat_input > form > button {
-  display: none;
+.logout {
+  cursor: pointer;
 }
