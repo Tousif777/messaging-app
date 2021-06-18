@@ -36,7 +36,6 @@ function Chat() {
           )
         );
     }
-    console.log(messages);
   }, [chatid]);
 
   const sendMessage = (e) => {
@@ -79,7 +78,7 @@ function Chat() {
             placeholder="enter the message"
             type="text"
           />
-          <Button onClick={sendMessage} type="submit">
+          <Button disabled={!input} onClick={sendMessage} type="submit">
             Send
           </Button>
         </form>

@@ -1,12 +1,11 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import { RateReviewOutlined } from "@material-ui/icons";
-import SearchIcon from "@material-ui/icons/Search";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import "./Sidebar.css";
 import SidebarChat from "./SidebarChat";
-import db, { auth } from "../firebase";
+import db from "../firebase";
 
 function Sidebar() {
   const user = useSelector(selectUser);
@@ -35,15 +34,8 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar_header">
-        <Avatar
-          onClick={() => auth.signOut()}
-          src={user.photo}
-          className="sidebar_avatar"
-        />
-        <div className="sidebar_input">
-          <SearchIcon />
-          <input placeholder="search" />
-        </div>
+        <Avatar src={user.photo} className="sidebar_avatar" />
+
         <IconButton variant="outlined" className="sidebar_inputbutton">
           <RateReviewOutlined onClick={addChat} />
         </IconButton>
